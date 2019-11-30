@@ -1,0 +1,154 @@
+@import "./fonts";
+@import "./reused";
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 10px 8px;
+	background-color: white;
+	border-bottom: 2px solid #ddd;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+	img {
+		width: 40px;
+	}
+
+	.title{
+		text-align: center;
+		@extend .poppins;
+		font-size: 19px;
+		font-weight: bold;
+		margin: 0
+	}
+}
+
+
+
+.wrapper {
+	background-color: #f4f6f8;
+}
+.content {
+	padding: 25px;
+	min-height: calc(100vh - 140px);
+}
+footer {
+	background-color: #0f0f0f;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 55px;
+	padding-right: 30px;
+	padding-left: 30px;
+	justify-content: flex-end;
+
+	p {
+		margin: 0;
+		padding: 0;
+		color: #d8d8d8;
+		@extend .montserrat;
+	}
+
+	.love {
+		color: #ff0033;
+	}
+
+	a {
+		text-decoration: underline;
+		color: $secondary;
+	}
+}
+
+.card {
+	background-color: white;
+	border-radius: 4px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
+
+	.card-title {
+		display: flex;
+		flex-direction: row;
+		h3 {
+			font-size: 28px;
+			@extend .cartogothic;
+		}
+		img {
+			height: 40px;
+		}
+	}
+
+	
+}
+.form {
+	padding: 5%;
+	padding-top: 30px;
+
+	.inputGroup {
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.custom-control-input:checked~.custom-control-label::before {
+		border-color: $secondary;
+    	background-color: $secondary;
+	}
+
+	input {
+		&:not([type=checkbox]) {
+			width: 100%;
+			margin-bottom: 15px;
+			border: 1px solid #ddd;
+			padding: 10px 10px;
+			padding-left: 35px;
+			@extend .montserrat;
+			background-repeat: no-repeat;
+			background-size: 18px 18px;
+			background-position: 7px 10px;
+	
+	
+			&:first-of-type {
+				margin-top: 15px;
+			}
+	
+			&[name=usermail]{
+				background-image: url("/images/icons/email.png")
+			}
+	
+			&[name=password]{
+				background-image: url("/images/icons/lock.png")
+			}
+		}
+	}
+
+	
+
+	button {
+		width: 100%;
+		padding: 10px;
+		background-color: $secondary;
+		border: none;
+		color: white;
+		@extend .raleway;
+		font-weight: bold;
+	}
+
+	a.register {
+		display: inline-flex;
+		width: 100%;
+		padding: 10px; 
+		flex-direction: row;
+		justify-content: center;
+		background-color: $accent;
+		color: white;
+		@extend .raleway;
+		font-weight: bold;
+	}
+
+	p {
+		@extend .montserrat;
+		margin-top: 15px;
+		&.register-p {
+			margin-top: 30px;
+		}
+	}
+	
+}

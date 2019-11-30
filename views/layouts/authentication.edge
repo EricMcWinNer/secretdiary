@@ -5,18 +5,26 @@
         <link rel="stylesheet" href="/vendor/bootstrap.min.css" />
         <link rel="stylesheet" href="/vendor/fontawesome/fontawesome-all.min.css" />
         <link rel="stylesheet" href="/stylesheets/auth.css" />
+        <link rel="icon" href="/images/logo.png" />
     </head>
     <body>
         <header>
             <nav>
-    
+                <div class="title">
+                    <img src="/images/logo.png" class="logo" />
+                    <p class="title">{{APP_NAME}}</p>
+                </div>
             </nav>
         </header>
 
-        @!section('content')
+        <div class="wrapper">
+            <div class="container content">
+                    @!section('content')
+            </div>
+        </div>
 
         <footer>
-            
+            <p>Built from scratch with <span class="love"><i class="fas fa-heart"></i></span> by <a target="_blank" href="https://twitter.com/ericmcwinner">Eric McWinNEr</a></p>
         </footer>
 
         <script src="/vendor/jquery-3.2.1.min.js"></script>
