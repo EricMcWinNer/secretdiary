@@ -27,7 +27,7 @@ app.use(
 		dest: path.join(__dirname, "public", "stylesheets"),
 		debug: true,
 		outputStyle: "compressed",
-    prefix: "/stylesheets", // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
+		prefix: "/stylesheets", // Where prefix is at <link rel="stylesheets" href="prefix/style.css"/>
 	})
 );
 app.set("views", path.join(__dirname, "views"));

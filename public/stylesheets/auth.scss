@@ -129,6 +129,12 @@ footer {
 		color: white;
 		@extend .raleway;
 		font-weight: bold;
+		transition-duration: .5s;
+		transition-property: background-color;
+
+		&:hover {
+			background-color: $darkerSecondary;
+		}
 	}
 
 	a.register {
@@ -141,6 +147,14 @@ footer {
 		color: white;
 		@extend .raleway;
 		font-weight: bold;
+		text-decoration: none;
+		transition-duration: .5s;
+		transition-property: background-color;
+
+		&:hover {
+			background-color: $darkerAccent;
+		}
+
 	}
 
 	p {
