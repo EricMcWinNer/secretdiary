@@ -9,6 +9,7 @@ const expressEdge = require("express-edge");
 const sass = require("node-sass-middleware");
 const session = require("express-session");
 var flash = require("connect-flash");
+const MongoStore = require("connect-mongo")(session);
 
 //routers
 var indexRouter = require("./routes/index");
@@ -49,6 +50,7 @@ app.use(
 		cookie: {
 			maxAge: 1000 * 60 * 60,
 		},
+		store: new MongoStore({ mongooseConnection: mongoose.connection }),
 	})
 );
 
