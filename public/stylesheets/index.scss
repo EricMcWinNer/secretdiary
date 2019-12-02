@@ -1,0 +1,61 @@
+@import "./fonts";
+@import "./reused";
+@import "./footer";
+
+nav {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    padding: 0 60px;
+    align-items: center;
+    background-color: white;
+	border-bottom: 2px solid #ddd;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+    div{
+        &:nth-of-type(2) {
+            margin-left: auto;
+        }
+    }
+    
+    a {
+        display: inline-block;
+        margin: 0 20px;
+
+        
+        &.registerButton {
+            background-color: $accent;
+            padding: 10px 30px;
+            color: white;
+            text-decoration: none;
+            border-radius: 9000px;
+            transition-duration: .5s;
+            transition-property: background-color;
+
+            &:hover {
+                background-color: $darkerAccent;
+            }
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    img {
+        width: 40px;
+    }
+
+    .title{
+		text-align: center;
+		@extend .poppins;
+		font-size: 19px;
+		font-weight: bold;
+		margin: 0
+	}
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-color: $accent;
+}

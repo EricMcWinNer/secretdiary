@@ -7,10 +7,20 @@ var logger = require("morgan");
 const mongoose = require("mongoose");
 const expressEdge = require("express-edge");
 const sass = require("node-sass-middleware");
+const session = require("express-session");
+var flash = require("connect-flash");
 
+//routers
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var dashboardRouter = require("./routes/dashboard");
 var authRouter = require("./routes/auth");
+
+//middleware
+const authenticatedMiddleware = require("./middleware/authenticated");
+const notauthenticatedMiddleware = require("./middleware/notauthenticated");
+
+//controllers
+const authController = require("./controllers/authentication");
 
 var app = express();
 mongoose.connect(process.env.MONGODB_CONNECT, {
@@ -32,15 +42,28 @@ app.use(
 );
 app.set("views", path.join(__dirname, "views"));
 
+app.use(cookieParser());
+app.use(
+	session({
+		secret: process.env.SESSION_KEY,
+		cookie: {
+			maxAge: 1000 * 60 * 60,
+		},
+	})
+);
+
+app.use(flash());
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/auth", authRouter);
+app.use(authController);
+app.use("/dashboard", authenticatedMiddleware, dashboardRouter);
+app.use("/auth", notauthenticatedMiddleware, authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,6 +78,7 @@ app.use(function(err, req, res, next) {
 
 	// render the error page
 	res.status(err.status || 500);
+	console.log(err.stack, err.message);
 	res.render("error");
 });
 

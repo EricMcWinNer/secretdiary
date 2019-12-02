@@ -1,7 +1,17 @@
-@layout('layouts/authentication')
+@layout('layouts.authentication')
 
 @section('content')
     <div class="col-md-6 form offset-md-3 card">
+        @if(success)
+            <div class="alert alert-success">
+                {{success}}
+            </div>
+        @endif
+        @if(errors)
+            <div class="alert alert-error">
+                {{errors}}
+            </div>
+        @endif
         <div class="card-title">
             <h3>Login</h3>
         </div>
@@ -11,13 +21,17 @@
             <input type="password" placeholder="Password" name="password" />
             <div className="fullWidth inputGroup">
                 <div class="custom-control my-3 custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                    <input type="checkbox" class="custom-control-input" id="customCheck" name="stay">
                     <label class="custom-control-label" for="customCheck">Check this custom checkbox</label>
                 </div>
              </div>
             <button type="submit">Login</button>
             <p class="register-p">Don't have an account? </p>
-            <a class="register" href="/auth/register" target="_blank">Register</a>
+            <a class="register" href="/auth/register">Register</a>
         </form>
     </div>
+@endsection
+
+@section('head')
+    <title>Login | {{APP_NAME}}</title>
 @endsection

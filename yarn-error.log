@@ -1,0 +1,50 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add bcrypt
+
+PATH: 
+  C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\wamp64\bin\php\php7.1.9;C:\composer;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Git\cmd;C:\Program Files\PostgreSQL\10\bin;C:\Program Files (x86)\Yarn\bin\;C:\Users\Eric McWinNEr\AppData\Local\Android\Sdk\platform-tools\;C:\Program Files\nodejs\;C:\Program Files\Symfony;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Eric McWinNEr\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PhpStorm 2017.2.4\bin\phpstorm64.exe;C:\wamp64\bin\php\php7.1.9;C:\Program Files (x86)\Google\Chrome\Application;C:\Program Files\JetBrains\PhpStorm 2017.2.3\bin;C:\Program Files\JetBrains\WebStorm 2019.1.2\bin;C:\Program Files\JetBrains\PhpStorm 2018.3.5\bin;;C:\Program Files\JetBrains\WebStorm 2018.3\bin;;C:\Users\Eric McWinNEr\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files\PostgreSQL\10\bin;
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'c:\NodeJSProjects\secretdiary\node_modules\node-sass\vendor\win32-x64-64\binding.node'
+
+npm manifest: 
+  {
+  	"name": "secretdiary",
+  	"version": "0.0.0",
+  	"private": true,
+  	"scripts": {
+  		"start": "nodemon ./bin/www"
+  	},
+  	"dependencies": {
+  		"cookie-parser": "~1.4.4",
+  		"cryptr": "^6.0.1",
+  		"debug": "~2.6.9",
+  		"dotenv": "^8.2.0",
+  		"edge": "^7.10.1",
+  		"express": "~4.16.1",
+  		"express-edge": "^2.0.1",
+  		"http-errors": "~1.6.3",
+  		"jade": "~1.11.0",
+  		"mongoose": "^5.7.13",
+  		"morgan": "~1.9.1"
+  	},
+  	"devDependencies": {
+  		"node-sass-middleware": "^0.11.0",
+  		"nodemon": "^2.0.1"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

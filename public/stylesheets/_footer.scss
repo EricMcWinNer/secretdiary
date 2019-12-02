@@ -1,0 +1,26 @@
+footer {
+	background-color: #0f0f0f;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 55px;
+	padding-right: 30px;
+	padding-left: 30px;
+	justify-content: flex-end;
+
+	p {
+		margin: 0;
+		padding: 0;
+		color: #d8d8d8;
+		@extend .montserrat;
+	}
+
+	.love {
+		color: #ff0033;
+	}
+
+	a {
+		text-decoration: underline;
+		color: $secondary;
+	}
+}

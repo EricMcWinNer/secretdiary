@@ -1,0 +1,30 @@
+@layout('layouts.authentication')
+
+@section('content')
+
+    <div class="col-md-6 form offset-md-3 card">
+        @if(errors)
+            <div class="alert alert-danger">
+                {{errors}}
+            </div>
+        @endif
+        <div class="card-title">
+            <h3>Register</h3>
+        </div>
+        <p class="mt-0">Fill in your credentials to create a new account</p>
+        <form method="POST" action="/register">
+            <input type="text" placeholder="Username" value="{{values.username || ''}}" name="username" />
+            <input type="email" placeholder="Email" value="{{values.email || ''}}" name="email" />
+            <input type="password" placeholder="Password" name="password" />
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" />
+            <button class="register" type="submit">Register</button>
+            <p class="register-p">Already have an account? </p>
+            <a class="login" href="/auth/login">Login</a>
+        </form>
+    </div>
+@endsection
+
+
+@section('head')
+    <title>Register | {{APP_NAME}}</title>
+@endsection
